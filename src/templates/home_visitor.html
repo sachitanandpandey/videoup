@@ -1,13 +1,13 @@
 {% extends "base.html" %}
 {% load crispy_forms_tags %}
 
-{% block title %}Welcome | {% endblock %}
+{% block title %}Welcome | nh98{% endblock %}
 
 <style>
 {% block style %}
 
 .jumbotron {
-	background-image: url("http://www.transparenttextures.com/patterns/batthern.png");
+	background-image: url("http://vignette1.wikia.nocookie.net/vsbattles/images/a/a3/Black-windows_542931.jpg/revision/latest?cb=20150317090032");
 	background-color: #005880;
 }
 
@@ -92,7 +92,7 @@
 <div class='row'>
 
 <div class='col-sm-7'>
-	
+
 <h1>Welcome</h1>
 <p class='lead-jumbtron'>This is our site.</p>
 
@@ -123,7 +123,7 @@
 					<p>By registering you agree to our <a href='#'>terms</a></p>
   </div>
 </div>
-					
+
 
 
 	    </div>
@@ -159,10 +159,11 @@
 <!-- Marketing messaging and featurettes
     ================================================== -->
     <!-- Wrap the rest of the page in another container to center all the content. -->
-
+<!--
     <div class="container marketing">
 
       <!-- Three columns of text below the carousel -->
+      <!--
       <div class="row">
         <div class="col-lg-4">
           <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" style="width: 140px; height: 140px;">
@@ -170,21 +171,26 @@
           <p>Django, bootstrap and more.</p>
           <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
+        -->
+        <!--
         <div class="col-lg-4">
           <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" style="width: 140px; height: 140px;">
           <h2>Latest Technology</h2>
           <p>Django, bootstrap and more.</p>
           <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
+        -->
+        <!--
         <div class="col-lg-4">
           <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" style="width: 140px; height: 140px;">
           <h2>Latest Technology</h2>
           <p>Django, bootstrap and more.</p>
           <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
-        
+        -->
+        <!--
       </div><!-- /.row -->
-
+-->
 
       <!-- START THE FEATURETTES -->
 
@@ -197,7 +203,7 @@
         </div>
         <div class="col-sm-5">
           {% if featured_categories %}
-					
+
 					<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
 					  <!-- Indicators -->
 					  <ol class="carousel-indicators">
@@ -207,7 +213,7 @@
 					  </ol>
 
 					  <!-- Wrapper for slides -->
-					 
+
 
 					  <div class="carousel-inner" role="listbox">
 					   {% for cat in featured_categories %}
@@ -232,7 +238,7 @@
 					    <span class="sr-only">Next</span>
 					  </a>
 					</div>
-			
+
 
 
 
@@ -247,7 +253,7 @@
 
       <div class="row featurette">
         <div class="col-sm-5">
-         
+
 				{% if featured_videos %}
 
 
@@ -259,7 +265,7 @@
 				{% for vid in featured_videos %}
 				<tr><td><a href="{{ vid.get_absolute_url }}">{{ vid.title }}</a> {% if vid.free_preview %}Free Preview{% endif %}</td></tr>
 				{% endfor %}
-				  
+
 				  </table>
 				</div>
 
@@ -274,7 +280,7 @@
 
       </div>
 
-    
+
 
       <hr class="featurette-divider">
 

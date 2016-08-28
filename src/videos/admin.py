@@ -19,9 +19,9 @@ class VideoAdmin(admin.ModelAdmin):
 	list_display = ["__unicode__", 'slug']
 	fields = ['title', 'order', 'share_message', 'embed_code','active','slug',
 			'featured', 'free_preview',
-			 'category']
+			 'category','image']
 	prepopulated_fields = {
-		'slug': ["title"], 
+		'slug': ["title"],
 	}
 	class Meta:
 		model = Video

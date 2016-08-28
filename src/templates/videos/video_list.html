@@ -34,12 +34,12 @@
 <table class='table'>
 <thead>
 <th>#</th>
-<th>Lecture</th>
+<th>NH98 list</th>
 </thead>
 
 {% for item in queryset %}
 
-<tr><td>{{ forloop.counter }}</td><td>{% if request.user.is_authenticated or item.has_preview %}<a href='{{ item.get_absolute_url }}'>{{ item }}</a> {% else %} {{ item }} {% endif %}</td></tr>
+<tr><td>{{ forloop.counter }}</td><td>{% if request.user.is_authenticated or item.has_preview %}<a href='{{ item.get_absolute_url }}'><img src="{{ MEDIA_URL }}{{ item.image }}" alt="img" height="300" width="250"/>{{ item }}</a> {% else %} {{ item }} {% endif %}</td></tr>
 
 
 {% endfor %}

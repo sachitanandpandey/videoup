@@ -10,12 +10,12 @@ urlpatterns = patterns('',
     #url(r'^about/$', TemplateView.as_view(template_name='base.html'), name='home'),
     #url(r'^pricing/$', TemplateView.as_view(template_name='base.html'), name='home'),
     url(r'^contact/$', TemplateView.as_view(template_name='company/contact_us.html'), name='contact_us'),
-    url(r'^$', 'srvup.views.home', name='home'),
+    url(r'^$', 'nh98.views.home', name='home'),
     url(r'^projects/$', 'videos.views.category_list', name='projects'),
     url(r'^projects/(?P<cat_slug>[\w-]+)/$', 'videos.views.category_detail', name='project_detail'),
     url(r'^projects/(?P<cat_slug>[\w-]+)/(?P<vid_slug>[\w-]+)/$', 'videos.views.video_detail', name='video_detail'),
-    url(r'^dj/admin/', include(admin.site.urls)),
-) 
+    url(r'^djchotechacha/admin/', include(admin.site.urls)),
+)
 
 if settings.DEBUG:
     urlpatterns += patterns('',) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

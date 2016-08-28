@@ -7,7 +7,7 @@
 {% block style %}
 
 .jumbotron {
-	background-image: url("http://www.transparenttextures.com/patterns/batthern.png");
+	background-image: url("https://1.bp.blogspot.com/-VJLnE6LfPx4/V4znbGUADUI/AAAAAAAAAXM/Nru6rPd2wxAWFY9hqlkW7qYH6Hh6da1ggCLcB/s1600/cloudsvally.jpg");
 	background-color: #005880;
 }
 
@@ -94,17 +94,19 @@
 <div class='row'>
 
 <div class='col-sm-7'>
-	
-<h1>Welcome to Srvup</h1>
-<p class='lead-jumbtron'>This is a course, and a functioning web app, to help you learn how to code a content membership site in Django.</p>
+
+<h1>Coming SOON</h1>
+<p class='lead-jumbtron'>Exploring Maharashtra In Rain </p>
+<!--
 <p class='lead-jumbtron'>Features:
+
 <ul>
-	<li><p>Step-By-Step</p></li>
-	<li><p>Fully Functioning</p></li>
-	<li><p>On Demand Access</p></li>
+	<li><p>In Rain</p></li>
+	<li><p>Alone</p></li>
+	<li><p>Travel</p></li>
 </ul>
 </p>
-
+-->
 </div>
 <div class='col-sm-5'>
 
@@ -132,7 +134,7 @@
 					<p>By registering you agree to our <a href='#'>terms</a></p>
   </div>
 </div>
-					
+
 
 
 	    </div>
@@ -168,10 +170,12 @@
 <!-- Marketing messaging and featurettes
     ================================================== -->
     <!-- Wrap the rest of the page in another container to center all the content. -->
-
+    <!--
     <div class="container marketing">
 
       <!-- Three columns of text below the carousel -->
+
+      <!--
       <div class="row">
         <div class="col-lg-4">
           <img class="img-circle" src="http://note.crohaco.net/wp-content/uploads/2014/09/django-logo-2.png" alt="Generic placeholder image" style="width: 140px; height: 140px;">
@@ -179,19 +183,23 @@
           <p>Django Backend, Bootstrap Front End, Ajax, Python and more.</p>
           <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
+
+        <!--
         <div class="col-lg-4">
           <img class="img-circle" src="https://www.madison.k12.wi.us/files/Calendar_0.jpg" alt="Generic placeholder image" style="width: 140px; height: 140px;">
           <h2>Your Project <br/>Your Schedule</h2>
           <p>Time constraints are something we take very seriously. Implementing, or learning, this project is easier than ever.</p>
           <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
+
+        <!--
         <div class="col-lg-4">
           <img class="img-circle" src="http://siliconangle.com/files/2012/03/github_logo-300x300.jpg" style="width: 140px; height: 140px;">
           <h2>A Complete Project <br/>&amp; Open Source Code</h2>
           <p>The srvup project is ongoing and is made to work out of the box.</p>
           <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
-        
+        <!--
       </div><!-- /.row -->
 
 
@@ -201,12 +209,12 @@
 
       <div class="row featurette">
         <div class="col-sm-7">
-          <h2 class="featurette-heading">Content created to learn, projects made to work.<br/> <br/> <span class="text-muted">This is the beauty of project-based learning.</span></h2>
+          <h2 class="featurette-heading">We Are UK based Group.<br/> <br/> <span class="text-muted">in the production of audio visual content for different audience needs.</span></h2>
 
         </div>
         <div class="col-sm-5">
           {% if featured_categories %}
-					
+
 					<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
 					  <!-- Indicators -->
 					  <ol class="carousel-indicators">
@@ -216,7 +224,7 @@
 					  </ol>
 
 					  <!-- Wrapper for slides -->
-					 
+
 
 					  <div class="carousel-inner" role="listbox">
 					   {% for cat in featured_categories %}
@@ -241,7 +249,7 @@
 					    <span class="sr-only">Next</span>
 					  </a>
 					</div>
-			
+
 
 
 
@@ -256,34 +264,41 @@
 
       <div class="row featurette">
         <div class="col-sm-5">
-         
+
 				{% if featured_videos %}
 
 
 				<div class="panel panel-default">
 				   <div class="panel-heading">
-			    <h3 class="panel-title">Featured Videos</h3>
+			    <h3 class="panel-title">MY Collection</h3>
 			  </div>
 				    <table class='table'>
 				{% for vid in featured_videos %}
-				<tr><td><a href="{{ vid.get_absolute_url }}">{{ vid.title }}</a> {% if vid.free_preview %}Free Preview{% endif %}</td></tr>
+				<tr><tr><a href="{{ vid.get_absolute_url }}"><img src="{{ MEDIA_URL }}{{ vid.image }}" alt="img" height="300" width="250"/></a> {% if vid.free_preview %}Free Preview{% endif %}</tr></tr>
 				{% endfor %}
-				  
+
 				  </table>
 				</div>
+				<h2 class="panel-title">Please Subscribe to our channel</h2>
+                <script src="https://apis.google.com/js/platform.js"></script>
+
+                <div class="g-ytsubscribe" data-channelid="UCRBY8nFwZS23kHzP4RRy5aw" data-layout="full" data-theme="dark" data-count="default"></div>
 
 
 
 				{% endif %}
         </div>
         <div class="col-sm-7">
-          <h2 class="featurette-heading">Content is updated to meet demands of the srvup project. <span class="text-muted">See for yourself.</span></h2>
+          <h2 class="featurette-heading">Content is updated to meet demands of the nh98 project. <span class="text-muted">See for yourself.</span></h2>
+          <a href=""><img src="https://1.bp.blogspot.com/-07EJEGoG3SM/V4z_qEL9UlI/AAAAAAAAAXc/HUh7t-5AOIEydKTNhuK-IBbwMRb-s1_gQCLcB/s1600/scene1.jpg" height="800" width="1000"/></a>
+          <a href="https://vimeo.com/ondemand/highstrung"><img src="https://i.ytimg.com/vi/v3Xi1yEDN7U/maxresdefault.jpg" height="1000" width="800"/></a>
+          <a href="https://vimeo.com/ondemand/somegirls"><img src="http://www.gstatic.com/tv/thumb/movieposters/10055229/p10055229_p_v8_aa.jpg" height="1000" width="800"/></a>
         </div>
       </div>
 
       </div>
 
-    
+
 
       <hr class="featurette-divider">
 

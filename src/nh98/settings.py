@@ -20,12 +20,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 SECRET_KEY = '6j6^%gd-su1^j7qmp&4g-gm$_nvs2hx(og&ovlj#1)+@09@p87'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-TEMPLATE_DEBUG = True
+TEMPLATE_DEBUG = False
 
-ALLOWED_HOSTS = []
-FULL_DOMAIN_NAME = 'http://www.codingforentrepreneurs.com'
+ALLOWED_HOSTS = ["nh98.pythonanywhere.com"]
+FULL_DOMAIN_NAME = 'nh98.pythonanywhere.com'
 
 LOGIN_URL = "/login/"
 
@@ -43,7 +43,7 @@ INSTALLED_APPS = (
     "crispy_forms",
     'accounts',
     "analytics",
-    "billing",
+#    "billing",
     'comments',
     'notifications',
     'videos',
@@ -73,9 +73,9 @@ TEMPLATE_CONTEXT_PROCESSORS =(
     "django.contrib.messages.context_processors.messages"
 )
 
-ROOT_URLCONF = 'srvup.urls'
+ROOT_URLCONF = 'nh98.urls'
 
-WSGI_APPLICATION = 'srvup.wsgi.application'
+WSGI_APPLICATION = 'nh98.wsgi.application'
 
 
 # Database
@@ -111,19 +111,27 @@ STATICFILES_DIRS = (
     os.path.join(os.path.dirname(BASE_DIR), "static", "static_dirs"),
     #'/Users/jmitch/Desktop/srvup/static/static_dirs/', #on mac
     #'\Users\jmitch\Desktop\srvup\static\static_dirs\', somethingl ike this on windows
-    #'/var/www/static/',
+    '/var/www/static/',
+#    '/home/nh98/nh98/static/',
 )
 
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    #'django.contrib.staticfiles.finders.DefaultStorageFinder',
+)
+
+
 STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static", "static_root")
+#STATIC_ROOT = "/home/nh98/nh98/static/"
 
 TEMPLATE_DIRS = (
     os.path.join(BASE_DIR, "templates"),
 )
 
-
+#MEDIA_ROOT = "/home/nh98/nh98/static/media"
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static", "media")
-
 
 
 #braintree info

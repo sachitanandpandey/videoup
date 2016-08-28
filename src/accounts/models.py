@@ -74,7 +74,7 @@ class MyUser(AbstractBaseUser):
 			null=True,
 			blank=True,
 			)
-	is_member = models.BooleanField(default=False, 
+	is_member = models.BooleanField(default=False,
 					verbose_name='Is Paid Member')
 	is_active = models.BooleanField(default=True)
 	is_admin = models.BooleanField(default=False)
@@ -134,14 +134,14 @@ user_logged_in.connect(user_logged_in_signal)
 class UserProfile(models.Model):
 	user = models.OneToOneField(MyUser)
 	bio = models.TextField(null=True, blank=True)
-	facebook_link = models.CharField(max_length=320, 
-		null=True, 
-		blank=True, 
+	facebook_link = models.CharField(max_length=320,
+		null=True,
+		blank=True,
 		verbose_name='Facebook profile url')
-	twitter_handle = models.CharField(max_length=320, 
-		null=True, 
-		blank=True, 
-		verbose_name='Twitter handle')		
+	twitter_handle = models.CharField(max_length=320,
+		null=True,
+		blank=True,
+		verbose_name='Twitter handle')
 
 
 	def __unicode__(self):
@@ -153,8 +153,8 @@ def new_user_receiver(sender, instance, created, *args, **kwargs):
 	if created:
 		new_profile, is_created = UserProfile.objects.get_or_create(user=instance)
 		#print new_profile, is_created
-		notify.send(instance, 
-					recipient=MyUser.objects.get(username='jmitchel3'), #admin user
+		notify.send(instance,
+					recipient=MyUser.objects.get(username='aaranda'), #admin user
 					verb='New user created.')
 		# merchant account customer id -- stripe vs braintree
 	try:
@@ -172,7 +172,7 @@ def new_user_receiver(sender, instance, created, *args, **kwargs):
 			print "Error: {0}".format(new_customer_result.message)
 			messages.error(request, "There was an error with your account. Please contact us.")
 
-		
+
 		# send email for verifying user email
 
 post_save.connect(new_user_receiver, sender=MyUser)

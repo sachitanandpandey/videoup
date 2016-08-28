@@ -19,28 +19,32 @@ from .models import Video, Category, TaggedItem
 def video_detail(request, cat_slug, vid_slug):
 	cat = get_object_or_404(Category, slug=cat_slug)
 	obj = get_object_or_404(Video, slug=vid_slug, category=cat)
-	page_view.send(request.user, 
-				page_path=request.get_full_path(), 
+	page_view.send(request.user,
+				page_path=request.get_full_path(),
 				primary_obj=obj,
 				secondary_obj=cat)
 	if request.user.is_authenticated() or obj.has_preview:
-		try:
-			is_member = request.user.is_member
-		except:
-			is_member = None
-		if is_member or obj.has_preview:
-			comments = obj.comment_set.all()
-			for c in comments:
-				c.get_children()
-			comment_form = CommentForm()
-			context = {"obj": obj, 
-				"comments":comments, 
-				"comment_form": comment_form}
-			return render(request, "videos/video_detail.html", context)
-		else:
-			# upgrade account
-			next_url = obj.get_absolute_url()
-			return HttpResponseRedirect("%s?next=%s"%(reverse('account_upgrade'), next_url))
+
+#       try:
+#			is_member = request.user.is_member
+#		except:
+#			is_member = None
+#		if is_member or obj.has_preview:
+		comments = obj.comment_set.all()
+		for c in comments:
+			c.get_children()
+		comment_form = CommentForm()
+		context = {"obj": obj,
+			"comments":comments,
+			"comment_form": comment_form}
+
+		return render(request, "videos/video_detail.html", context)
+#
+#		else:
+#			# upgrade account
+#			next_url = obj.get_absolute_url()
+#			return HttpResponseRedirect("%s?next=%s"%(reverse('account_upgrade'), next_url))
+#
 	else:
 		next_url = obj.get_absolute_url()
 		return HttpResponseRedirect("%s?next=%s"%(reverse('login'), next_url))
@@ -62,8 +66,8 @@ def category_list(request):
 def category_detail(request, cat_slug):
 	obj = get_object_or_404(Category, slug=cat_slug)
 	queryset = obj.video_set.all()
-	page_view.send(request.user, 
-				page_path=request.get_full_path(), 
+	page_view.send(request.user,
+				page_path=request.get_full_path(),
 				primary_obj=obj)
 
 

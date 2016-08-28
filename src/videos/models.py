@@ -76,6 +76,11 @@ class Video(models.Model):
 	category = models.ForeignKey("Category", default=1)
 	timestamp = models.DateTimeField(auto_now_add=True, auto_now=False, null=True)
 	updated = models.DateTimeField(auto_now_add=False, auto_now=True, null=True)
+	image = models.ImageField(upload_to='images/', null=True, blank=True)
+    #'''
+    #added By SAchit
+    #
+
 
 
 	objects = VideoManager()
@@ -109,8 +114,8 @@ class Video(models.Model):
 		if video is not None:
 			return video.get_absolute_url()
 		return None
-	
-	@property 
+
+	@property
 	def has_preview(self):
 		if self.free_preview:
 			return True

@@ -10,7 +10,7 @@
     <link rel="icon" href="../../favicon.ico">
 
 
-    <title>{% block title %}{% endblock %}srvup Project</title>
+    <title>{% block title %}NH98{% endblock %}</title>
 
     <!-- Bootstrap core CSS -->
     <!-- <link href="../../dist/css/bootstrap.min.css" rel="stylesheet"> -->
@@ -53,7 +53,7 @@
   .navbar-default {
     background-color: #005880;
     border-color: #256582;
-    background-image: url("http://www.transparenttextures.com/patterns/batthern.png");
+    background-image: url("http://bestwallpaperhd.com/wp-content/uploads/2014/09/Mountains-Wallpaper.jpg");
   }
 
   .navbar-default .navbar-nav>li>a {
@@ -94,7 +94,7 @@
 
   }
   .nav-tab-item-jumbotron {
-    
+
   }
 
 
@@ -110,12 +110,12 @@
   <body>
 
   {% include 'navbar.html' %}
-  
+
   {% block jumbotron %}
   {% endblock %}
 
     <div class="container main-container">
-    
+
 
     <div id='notificationsLoader'>
 
@@ -124,13 +124,13 @@
         {% for message in messages %}
         <div class="alert {% if 'error' in message.tags %}alert-warning{%else %}alert-success{% endif %}" role="alert">{% if 'safe' in message.tags %}{{ message|safe }}{% else %} {{ message }}{% endif %}
         </div>
-        
+
         {% endfor %}
       {% endif %}
     	{% block content %}
     	{% endblock %}
 
-      <!-- Main component for a primary marketing message or call to action 
+      <!-- Main component for a primary marketing message or call to action
       <div class="jumbotron">
         <h1>Navbar example</h1>
         <p>This example is a quick exercise to illustrate how the default, static and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>

@@ -48,17 +48,17 @@ def auth_login(request):
 	title = "Login"
 	submit_btn = title
 	submit_btn_class = "btn-success btn-block"
-	extra_form_link = "Upgrade your account today <a href='%s'>here</a>!" %(reverse("account_upgrade"))
+#	extra_form_link = "Upgrade your account today <a href='%s'>here</a>!" %(reverse("account_upgrade"))
 	context = {
 		"form": form,
 		"action_url": action_url,
 		"title": title,
 		"submit_btn": submit_btn,
 		"submit_btn_class": submit_btn_class,
-		"extra_form_link":extra_form_link
+#		"extra_form_link":extra_form_link
 		}
 	return render(request, "accounts/account_login_register.html", context)
-	
+
 
 def auth_register(request):
 
@@ -74,7 +74,7 @@ def auth_register(request):
 		#new_user.password = password #WRONG
 		new_user.set_password(password) #RIGHT
 		new_user.save()
-
+		return HttpResponseRedirect('/login')
 	action_url = reverse("register")
 	title = "Register"
 	submit_btn = "Create free account"
